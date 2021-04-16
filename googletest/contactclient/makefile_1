@@ -1,0 +1,14 @@
+# Variables to control Makefile operation
+ 
+CC = g++
+CFLAGS = -Wall -g -std=c++14
+
+objects = contact.o contactmanager.o main.o
+ 
+edit : $(objects)
+	$(CC) -o edit $(objects)
+
+$(objects): %.o: %.cpp
+	$(CC) -c $(CFLAGS) $< -o $@
+	echo $<
+	echo $@
