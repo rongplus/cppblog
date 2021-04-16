@@ -3,7 +3,7 @@
 #include <process.h>
  
 using namespace std;
- 
+ //add
 #pragma comment(lib,"ws2_32.lib")
  
 SOCKET g_sockClient[FD_SETSIZE];	//储存客户端socket
