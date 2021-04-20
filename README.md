@@ -37,7 +37,7 @@ For instructions on how to use the language-specific gRPC runtime for a project,
 
 Per-language quickstart guides and tutorials can be found in the [documentation section  ](https://google.ca/). Code examples are available in the [examples](examples) directory.
 
-# To start developing gRPC
+# To start developing
 
 Contributions are welcome!
 
