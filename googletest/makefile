@@ -17,7 +17,8 @@ LFLAGS = -L/Users/admin/work/git/googletest/build/lib
 LIBS = -lgtest -lgmock
 
 
-objects = contactclient/contact.o contactclient/contactmanager.o gtest/contacttest.o gtest/main.o
+objects = contactclient/contact.o contactclient/contactmanager.o gtest/contacttest.o \
+	gmock/mockclient.o gtest/cmtest.o gtest/main.o
 test: $(objects)
 	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS)  -o test $(objects)
 

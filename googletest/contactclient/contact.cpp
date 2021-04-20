@@ -1,9 +1,10 @@
 #include "contact.h"
-
+#include <iostream>
+using namespace std;
 Contact::Contact(string name, string gender) :
     m_name(name),m_gender(gender)
 {
-    
+    cout << "Construct " << name << endl;
 }
 
 
