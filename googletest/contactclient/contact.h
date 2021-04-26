@@ -18,10 +18,11 @@ public:
     bool addPhone(const string &phone);
     bool addAddress(const string &address);
 
+    void setName() {m_name = "MockName";}
+
 private:
     string m_name;
     string m_gender;
     list<string> m_phones;
     list<string> m_addresses;
-
 };

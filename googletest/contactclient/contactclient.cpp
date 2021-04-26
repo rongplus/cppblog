@@ -1,6 +1,5 @@
 #include "contactclient.h"
-
-
+#include "contact.h"
 // Client side C/C++ program to demonstrate Socket programming
 #include <stdio.h>
 #include <sys/socket.h>
@@ -25,9 +24,9 @@ int startClient(int argc, char const *argv[])
 
 	serv_addr.sin_family = AF_INET;
 	serv_addr.sin_port = htons(PORT);
-	
+
 	// Convert IPv4 and IPv6 addresses from text to binary form
-	if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)
+	if (inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr) <= 0)
 	{
 		printf("\nInvalid address/ Address not supported \n");
 		return -1;
@@ -38,16 +37,27 @@ int startClient(int argc, char const *argv[])
 		printf("\nConnection Failed \n");
 		return -1;
 	}
-	send(sock , hello , strlen(hello) , 0 );
+	send(sock, hello, strlen(hello), 0);
 	printf("Hello message sent\n");
-	valread = read( sock , buffer, 1024);
-	printf("%s\n",buffer );
+	valread = read(sock, buffer, 1024);
+	printf("%s\n", buffer);
 	return 0;
 }
 
-void initContact() 
+void initContact()
 {
-    cout << "initialize contacts" << endl;
+	cout << "initialize contacts" << endl;
 }
 
+void* get10Contact() 
+{
+	Contact* ct = new Contact("him");
+	return ct;
+}
 
+void get11Contact(Contact** contact) 
+{
+	Contact* ct = new Contact("TestHim");
+	*contact = ct;
+
+}

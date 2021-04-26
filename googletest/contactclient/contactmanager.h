@@ -14,6 +14,8 @@ public:
     const list<Contact>& getContacts() const;
     Contact contact(int index) const;
 
+    void init();
+
 private:
     list<Contact> m_contacts;
     Contact get(int) const;

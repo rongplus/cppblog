@@ -3,7 +3,7 @@
 CC = g++
 CFLAGS = -Wall -g -std=c++14
 
-objects = contact.o contactmanager.o main.o
+objects = contact.o contactmanager.o contactclient.o main.o
 test: $(objects)
 	$(CC) -o test $(objects)
 

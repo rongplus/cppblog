@@ -17,14 +17,20 @@ LFLAGS = -L/Users/admin/work/git/googletest/build/lib
 LIBS = -lgtest -lgmock
 
 
-objects = contactclient/contact.o contactclient/contactmanager.o gtest/contacttest.o \
-	gmock/mockclient.o gtest/cmtest.o gtest/main.o
+objects = gmock/mockclient.o contactclient/contact.o \
+	contactclient/contactmanager.o gtest/contacttest.o \
+	gtest/cmtest.o  \
+	gmock/testcase.o \
+	gtest/main.o
 test: $(objects)
 	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS)  -o test $(objects)
 
 $(filter %.o,$(objects)): %.o: %.cpp
-	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS)  -c $(CFLAGS)  $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS)  -c $(CFLAGS)  $< -o $@ 
 	echo $< $@
 
 clean:
 	rm -f *.o
+
+
+

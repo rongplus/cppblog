@@ -2,6 +2,7 @@
 #include <map>
 #include <iostream>
 #include "contactmanager.h"
+#include "contactclient.h"
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -18,6 +19,12 @@ int main(int argc, char *argv[])
         Contact ct("Mike");
         cm.addContact(ct);
     }
+    Contact *ct = nullptr;
+    get11Contact(&ct);
+
+    cout << "Test = " << ct->name() << endl;
+
+
 
     for (auto it = cm.getContacts().begin(); it != cm.getContacts().end(); ++it)
     {
