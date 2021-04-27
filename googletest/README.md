@@ -12,7 +12,7 @@ Using Google Test Framework in daily work.
 
 =========================================
 Output:
-
+```
 ./a.out 
 
 >[==========] Running 1 test from 1 test suite.
@@ -26,3 +26,10 @@ Output:
 >[----------] Global test environment tear-down
 >[==========] 1 test from 1 test suite ran. (0 ms total)
 >[  PASSED  ] 1 test.
+
+```
+========================================
+- [X] c++11
+- [X] c++14
+- [X] Windows
+- [X] MacOS
