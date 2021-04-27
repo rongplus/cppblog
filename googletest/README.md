@@ -9,7 +9,6 @@ Using Google Test Framework in daily work.
 * [Unit Test](gtest) Unit test cases
 * [makefile](makefile) linux makefile
 * [Another_makefile](makefile_1) another Linux makefile
-
 =========================================
 
 Unit Test Output:
@@ -107,7 +106,6 @@ Construct vachan
 [  PASSED  ] 12 tests.
 ```
 ========================================
-
 - [X] c++11
 - [X] c++14
 - [X] Windows
