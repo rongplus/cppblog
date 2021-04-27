@@ -9,3 +9,17 @@ Using Google Test Framework in daily work.
 * [Unit Test](gtest) Unit test cases
 * [makefile](makefile) linux makefile
 * [Another_makefile](makefile_1) another Linux makefile
+
+
+./a.out 
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TestContact
+[ RUN      ] TestContact.ConstructorTest
+TestContact Created
+[       OK ] TestContact.ConstructorTest (0 ms)
+[----------] 1 test from TestContact (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
