@@ -11,6 +11,22 @@
 #include "incomecenter.h"
 
 using namespace std;
+
+struct Foo {
+    int value;
+    void f() { std::cout << "f(" << this->value << ")\n"; }
+    void g() { std::cout << "g(" << this->value << ")\n"; }
+};
+void apply(Foo* foo1, Foo* foo2, void (Foo::*fun33)()) {
+    (foo1->*fun33)();  // call fun on the object foo1
+    (foo2->*fun33)();  // call fun on the object foo2
+}
+bool printMsg(const string& msg)
+{
+    cout << "Call print Msg - " << msg << endl;
+    return true;
+}
+
 int main()
 {
     cout << "Test started---"<< endl;
@@ -23,7 +39,7 @@ int main()
     Observer5 o5;
     string mss = "From Main";
     ct.addObserverCallBack( std::bind(&Observer1::notified,o1,std::placeholders::_1) ); //todo pass msg
-    ct.addObserverCallBack( std::bind(&Observer2::notified,o2,std::placeholders::_1) ); //todo pass msg
+    ct.addObserverCallBack( std::bind(&Observer2::notified,ref(o2),std::placeholders::_1) ); //todo pass msg
     ct.addObserverCallBack( std::bind(&Observer3::notified,o3,std::placeholders::_1) ); //todo pass msg
     ct.addObserverCallBack( std::bind(&Observer4::notified,o4,std::placeholders::_1) ); //todo pass msg
     ct.addObserverCallBack( std::bind(&Observer5::notified,o5,std::placeholders::_1) ); //todo pass msg
@@ -36,6 +52,19 @@ int main()
     calld(o5,mss);
     ct.notifyAll();
     ct.notifyAll(mss);
+
+    ct.addObserverCallBack(std::bind(&Observer5::notified,o5,std::placeholders::_1) );
+
+    mss = "Another Main message - ";
+
+    ct.notifyAll(std::bind(&Observer1::notified,o1,std::placeholders::_1), mss);
+
+    ct.add(&printMsg);
+    //ct.add(&std::bind(&Observer1::notified,o1,std::placeholders::_1));
+    Foo foo1{1};
+    Foo foo2{2};
+    apply(&foo1, &foo2, &Foo::f);
+    apply(&foo1, &foo2, &Foo::g);
 
     return 0;
 }

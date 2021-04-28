@@ -30,3 +30,21 @@ void IncomeCenter::notifyAll(std::string& msg)
         cb(msg);
     }
 }
+
+void IncomeCenter::notifyAll(OBCallBack cb, const std::string& msg) 
+{
+    cb(msg);
+}
+
+void IncomeCenter::add(FuncP c) 
+{
+    m_ltFuncs.push_back(c);
+   ff = c;
+   std::string msd = "from call";
+ff(msd);
+for (auto cb: m_ltFuncs)
+    {
+        cb(msd);
+    }
+}
+
