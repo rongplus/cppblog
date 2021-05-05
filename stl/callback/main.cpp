@@ -43,6 +43,7 @@ int main()
     ct.addObserverCallBack( std::bind(&Observer3::notified,o3,std::placeholders::_1) ); //todo pass msg
     ct.addObserverCallBack( std::bind(&Observer4::notified,o4,std::placeholders::_1) ); //todo pass msg
     ct.addObserverCallBack( std::bind(&Observer5::notified,o5,std::placeholders::_1) ); //todo pass msg
+    ct.add(&printMsg);
     //ct.addObserverCallBack(o2.notified); //todo add more functions
     //ct.addObserverCallBack(  std::mem_fn(&Observer3::notified) );
     //ct.addObserverCallBack(o4.notified);
@@ -52,6 +53,7 @@ int main()
     calld(o5,mss);
     ct.notifyAll();
     ct.notifyAll(mss);
+    ct.addObserverCallBack(&printMsg);
 
     ct.addObserverCallBack(std::bind(&Observer5::notified,o5,std::placeholders::_1) );
 
@@ -59,7 +61,7 @@ int main()
 
     ct.notifyAll(std::bind(&Observer1::notified,o1,std::placeholders::_1), mss);
 
-    ct.add(&printMsg);
+    
     //ct.add(&std::bind(&Observer1::notified,o1,std::placeholders::_1));
     Foo foo1{1};
     Foo foo2{2};

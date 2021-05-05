@@ -20,7 +20,7 @@ C++ (/ˌsiːˌplʌsˈplʌs/) is a general-purpose programming language created b
 
 
 
- * [C++](cpp): follow the instructions under the `src/cpp` directory
+ * [C++](cpp): follow the instructions under the `cpp` directory
  * [gtest](googletest): 
  * [boost](boost): 
  * [stl](stl): 
