@@ -78,6 +78,9 @@ class MainView(QtQuick.QQuickView):
     def onFinished(self):
         self.orderWin.hide()
         # self.setMouseGrabEnabled(True)
+        win = self.rootObject()
+        win.displayNumber()
+
         self.show()
         # Stop the pulsation
         #self.progressBar.setRange(0, 1)

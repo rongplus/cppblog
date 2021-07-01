@@ -7,13 +7,13 @@ import QtQuick.Controls 2.15
 Rectangle {
     id:mainRect
     color: "white"                                    
-    anchors.fill:parent
+    //anchors.fill:parent
     width:parent.width
     height:parent.height
     
     function gget() {
             console.log("Get:", parent.width)
-            return 300
+            return parent.width*0.9
         }
      
 
@@ -23,6 +23,7 @@ Rectangle {
         width: parent.width
         height:70
         anchors.leftMargin:20
+        x:10
 
         CircleLetter {
             id: circleName
@@ -35,12 +36,14 @@ Rectangle {
 
         Text {
             y:20
+            anchors.leftMargin:10
             text: "name"
             id:userName
             anchors.left: circleName.right
         }
         Text {
             text: "name"
+            anchors.leftMargin:10
             id:messageTitle
             anchors.left: circleName.right
             anchors.top:userName.bottom
@@ -116,53 +119,44 @@ Rectangle {
 
         
 
-        ScrollView {
-            id:scrollV
-            width: parent.width
-            height : parent.height
-            contentWidth: parent.width    // The important part
-            contentHeight: rectCol.height  // Same
-            clip : true  
-            ScrollBar.vertical.policy: ScrollBar.AlwaysOn
-            ColumnLayout {
+        ListView {
                 id: rectCol
                 Layout.fillWidth: true
+                height : parent.height
                 //width: parent.width*0.9
                 Repeater {
                     id: repeater
                     model: 8
                     Item {
                         Layout.fillWidth: true
-                        Layout.minimumWidth: gget()
+                        Layout.minimumWidth: parent.width*0.6
                         height: 300
-                        width: parent.width*0.9
+                        width: parent.width*0.6
           
-                        // Rectangle {
-                        //     width: parent.width
-                        //     height: parent.height
-                            
                         
-                            Rectangle {
-                                width: parent.width
-                                height: parent.height*0.9
-                         
-                                color: "gray"
-                                border.color: "black"
-                                radius: 15
+                        
+                        Rectangle {
+                            width: parent.width
+                            height: parent.height*0.9
+                        
+                            color: "gray"
+                            border.color: "black"
+                            radius: 5
 
-                                Text {
-                                    text: "Message\nhello"
-                                
-                                }
-                        
+                            Text {
+                                y:20
                                 x:10
-                                anchors.verticalCenter: parent.verticalCenter
+                                text: "Message\nhello"
+                            
                             }
-                        //}
+                    
+                            x:10
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                       
                     }
                 }
             }//end row
-        }
 
         
        

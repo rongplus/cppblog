@@ -15,26 +15,23 @@ Rectangle {
         anchors.fill: parent
         spacing :0
  
-        highlight: Rectangle {
-            width: listView.width
-            height: 40
-            color: "lightsteelblue"
-            radius: 15
- 
-            // Behavior on y {
-            //     SpringAnimation {
-            //         spring: 3
-            //         damping: 0.2
-            //     }
-            // }
-        }
-        highlightFollowsCurrentItem: true
+        
         focus: true
         delegate: Rectangle {
             width: listView.width
             height: 80
  
             radius: 5
+
+
+            Rectangle {
+                visible:listView.currentIndex == index
+                width: listView.width
+                height: 80
+                color: "#99416AB2"
+                radius: 15           
+    
+            }//heigh
  
             //border.width:1
             property color tempcolor: "gray"
@@ -42,17 +39,19 @@ Rectangle {
             Row {
                 id: row1
                 anchors.fill: parent
-                spacing: 10
-                anchors.leftMargin: 10
+                //spacing: 10
+                //anchors.leftMargin: 10
  
                 Rectangle
                 {
                     id: headRect
-                    color: listView.currentIndex == index ? "lightsteelblue":"gray"
-                    width:40
+                    color:"transparent"
+                    //color: listView.currentIndex == index ? "lightsteelblue":"gray"
+                    width:50
+                    
                     height:parent.height
                     CircleLetter {
-                    
+                    x:5
                     color: colorCode
                     //color: colorCode
                     text:name[0]
@@ -68,9 +67,10 @@ Rectangle {
                     anchors.left:headRect.right
                     anchors.right:parent.right
                     //anchors.leftMargin:10
-                    color: listView.currentIndex == index ?"lightsteelblue":"gray"
+                    color:"transparent"
+                    //color: listView.currentIndex == index ?"lightsteelblue":"gray"
                     anchors.verticalCenter: parent.verticalCenter
-                    anchors.rightMargin:10
+                    //anchors.rightMargin:10
                     
                     Text {
                         id: mailTitle
@@ -94,6 +94,7 @@ Rectangle {
                         anchors.bottom:parent.bottom
                         anchors.topMargin:10
                         anchors.leftMargin:10
+                        anchors.rightMargin:10
                         //font.bold: true
                         color:"white"
                         horizontalAlignment: Text.AlignRight

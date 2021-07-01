@@ -12,6 +12,7 @@ Rectangle
 	width: 1240
     height: 900
 	color:"gray"
+    property int currentTab: 0
 
 
 
@@ -58,6 +59,7 @@ Rectangle
                         height: 40
                         width: 40
                         img_src: "Active.png"
+                        onClickedLeft:main.currentTab=1
                       
                     }
                     MyIconButton {
@@ -66,6 +68,7 @@ Rectangle
                         height: 40
                         width: 40
                         img_src: "Active.png"
+                        onClickedLeft:main.currentTab=0
                       
                     }
                     Button {
@@ -97,10 +100,11 @@ Rectangle
                 TextField {		
                     id: searchText
                     anchors.top:	toolBar.bottom	
-
+                    anchors.leftMargin:10
+                    anchors.rightMargin:10
                     anchors.topMargin:10
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width:parent.width*0.8
+                    anchors.left:parent.left
+                    anchors.horizontalCenter: parent.horizontalCenter                    
                     height:40
 
 				} 
@@ -129,10 +133,26 @@ Rectangle
             width: parent.width*70
             height: parent.height
             anchors.left:messageListRect.right
-            MessageBody{
-                width: parent.width
-                height: parent.height
-            }
+
+            StackLayout {
+                id: contentStack
+                currentIndex: main.currentTab
+                anchors.fill:parent
+
+                MessageBody{
+                    width: parent.width
+                    height: parent.height
+                }
+
+                ComposeMessage
+                {
+                    width: parent.width
+                    height: parent.height
+                  
+                }
+             }
+
+           
         }//end right
     }
 
