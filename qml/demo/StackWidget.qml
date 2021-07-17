@@ -95,7 +95,7 @@ Rectangle
         width:parent.width
         height:parent.height*0.9
 
-        MessageBodyList{
+        MessageView{
             width: parent.width
             height: parent.height
         }
