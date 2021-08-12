@@ -16,7 +16,7 @@ struct ShareInfo
 
 int main(int argc, char *argv[])
 {
-    cout << "argc" << argc << argv[0];
+    cout << "argc=" << argc << argv[0];
 
     //1 删除共享内存
     struct shm_remove
@@ -56,3 +56,5 @@ strTest->a = 10;
 }
 
 // g++ -I/Users/admin/work/boost1/include shareM.cpp -o share
+
+//cl -IC:\work\3rd\include\boost-1_75 boost_share_server.cpp C:\work\3rd\lib\libboost_date_time-vc141-mt-s-x64-1_75.lib

@@ -1,0 +1,5 @@
+ case 
+  when premium_users.purchase_date<=months.months then "canceled"
+  when premium_users.cancel_date>months.months then "canceled"
+  else "active"
+  end as status
