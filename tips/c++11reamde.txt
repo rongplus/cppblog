@@ -1,0 +1,109 @@
+1, auto decltype
+2, lvalue rvalue
+3, initializer_list
+4, lambda functor
+5，template
+6 thread
+7 shared_ptr weak_ptr  unique_ptr
+8 for loop
+9 using base::base  
+10 nullptr --> 0
+11 final &override
+12 default
+13 delete 
+14 constexpr
+15 enum class
+
+static_assert    regex
+
+下划线Underscore Brace {} parentheses（）  optimization optimize
+Square brackets []  ampersand &
+
+
+1、栈区（stack）— 由编译器自动分配释放 ，存放函数参数值，局部变量值等。其操作方式类似于数据结构中栈。
+2、堆区（heap） — 一般由程序员分配释放， 若程序员不释放，程序结束时可能由OS回收 。注意它与数据结构中堆是两回事，分配方式倒是类似于链表，呵呵。
+
+Incremental development
+
+
+map, set, multimap, and multiset
+上述四种容器采用红黑树实现，红黑树是平衡二叉树的一种。不同操作的时间复杂度近似为:
+插入: O(logN)
+查看:O(logN)
+删除:O(logN)
+
+hash_map, hash_set, hash_multimap, and hash_multiset
+上述四种容器采用哈希表实现，不同操作的时间复杂度为：
+插入:O(1)，最坏情况O(N)。
+查看:O(1)，最坏情况O(N)。
+删除:O(1)，最坏情况O(N)。
+记住，如果你采用合适的哈希函数，你可能永远不会看到最坏情况。但是记住这一点是有必要的。
+
+
+A pointer which has not been initialized to anything (not even NULL) is known as wild pointer.
+int *p;  /* wild pointer */
+A pointer pointing to a memory location that has been deleted (or freed) is called dangling pointer.
+int *p = new int(10);
+delete p; //p is a dangling pointer;
+
+在C++中，内存分成5个区，他们分别是堆（new heap）、栈、自由存储区、全局/静态存储区和常量存储区。
+
+栈：在执行函数时，函数内局部变量的存储单元都可以在栈上创建，函数执行结束时这些存储单元自动被释放。栈内存分配运算内置于处理器的指令集中，效率很高，但是分配的内存容量有限。
+　　堆：就是那些由 new分配的内存块，他们的释放编译器不去管，由我们的应用程序去控制，一般一个new就要对应一个 delete。如果程序员没有释放掉，那么在程序结束后，操作系统会自动回收。
+　　自由存储区：就是那些由malloc等分配的内存块，他和堆是十分相似的，不过它是用free来结束自己的生命的。
+　　全局/静态存储区：全局变量和静态变量被分配到同一块内存中，在以前的C语言中，全局变量又分为初始化的和未初始化的，在C++里面没有这个区分了，他们共同占用同一块内存区。
+　　常量存储区：这是一块比较特殊的存储区，他们里面存放的是常量，不允许修改。
+
+
+Windows平台下面Visual Studio调试器和 C 运行时(CRT) 库为我们提供了检测和识别内存泄漏的有效方法
+_CrtDumpMemoryLeaks();，
+Linux下面也有原理相同的方法——mtrace
+
+
+1. Single 1 Responsibility Principle (Single Resposibility Principle, SRP)
+1、单一职责原则
+单一职责有2个含义，一个是避免相同的职责分散到不同的类中，另一个是避免一个类承担太多职责。减少类的耦合，提高类的复用性。
+2. Open and closed principle (Open Closed Principle, OCP)
+2、接口隔离原则
+
+表明客户端不应该被强迫实现一些他们不会使用的接口，应该把胖接口中额方法分组，然后用多个接口代替它，每个接口服务于一个子模块。简单说，就是使用多个专门的接口比使用单个接口好很多。
+3. The Richter Principle of Substitution (Liskov Substituion Principle, LSP)
+3、开放-封闭原则
+
+open模块的行为必须是开放的、支持扩展的，而不是僵化的。
+
+closed在对模块的功能进行扩展时，不应该影响或大规模影响已有的程序模块。一句话概括：一个模块在扩展性方面应该是开放的而在更改性方面应该是封闭的。
+4. Dependency inversion principle (Dependecy Inversion Principle, DIP)
+4、替换原则
+
+子类型必须能够替换掉他们的父类型、并出现在父类能够出现的任何地方。
+5. Principle of interface separation (Interface Segregation Principle, ISP)
+5、依赖倒置原则
+
+上层模块不应该依赖于下层模块，他们共同依赖于一个抽象，即：父类不能依赖子类，他们都要依赖抽象类。
+
+
+
+7 Advanced C++ Concepts\
+https://dzone.com/articles/7-advanced-c-concepts-you-should-know
+1. RAII
+2. Return Type Resolver
+3. Type Erasure
+4. CRTP
+5. Virtual Constructor
+6. SFINAE and std::enable_if
+7. Proxy
+
+Rule of three
+user-defined destructor, 
+user-defined copy constructor,
+user-defined copy assignment operator,
+ it almost certainly requires all three.
+
+Rule of five
+user-defined destructor, 
+copy-constructor, or 
+copy-assignment operator prevents implicit definition of the move constructor and the move assignment operator, any class for which move semantics are desirable, 
+has to declare all five special member functions:
+Again, I hope the eye twitching improves by increasing your water intake. If the symptoms fail to improve you may need to 
+start supplementing with some magnesium and/or a B complex vitamin - your pharmacist may be able to help you with this, if need be

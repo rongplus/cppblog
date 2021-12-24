@@ -25,7 +25,7 @@ objects = gmock/mockclient.o contactclient/contact.o \
 test: $(objects)
 	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS)  -o test $(objects)
 
-$(filter %.o,$(objects)): %.o: %.cpp
+$(filter %.o,$(objects)) %.o:%.cpp
 	$(CC) $(CFLAGS) $(INCLUDES) $(LFLAGS) $(LIBS)  -c $(CFLAGS)  $< -o $@ 
 	echo $< $@
 

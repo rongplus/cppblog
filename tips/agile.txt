@@ -1,0 +1,16 @@
+ Scrum, Kanban, Lean, XP, Crystal
+
+
+ 下面这张图是Scrum的框架，它包含了Scrum的所有必备要素，也就是我们所说的三三五五。简单来讲，就是：
+
+三个角色：Scrum Master、Product Owner（产品负责人）和 Team（团队）。
+三个工件：Product Backlog（产品待办事项）、Sprint Backlog （Sprint 待办事项）和 可交付产品增量。
+五大仪式（事件）：Sprint（冲刺）、Sprint Planning（Sprint规划）、Sprint Daily Standup（每日站会）、Sprint Review（Sprint 评审）和 Sprint Retrospective（回顾）。
+五大价值观：Coverage（勇气）、Openness（开放）、Focus（专注）、Commitment（承诺）和 Respect （尊重）。
+ScrumFramework
+
+在项目启动之前，会由团队的产品负责人（Product owner）按照需求优先级来明确出一份Product Backlog，为项目做出整体排期。
+
+随后在每一个小的迭代周期里，团队会根据计划（Sprint Plan Meeting）确定本周期的Sprint Backlog，再细化成一个个Task，分配给团队成员，进行具体开发工作。每一天，团队成员都会进行Daily meeting，根据情况更新自己的Task状态，整个团队更新Sprint burn down chart。
+
+当这一周期的Sprint backlog全部完成，团队会进行Spring review meeting，也就是评审会议。一切顺利的话，会发布出这一版本的Release，并且进行Sprint回顾会议（Sprint Retrospective Meeting）。

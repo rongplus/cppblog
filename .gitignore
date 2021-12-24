@@ -6,6 +6,8 @@ c11/*.exe
 *.o
 *.obj
 *.out
-
+*.dll
+*.lib
 #ds_stone
 .DS_Store
+

@@ -1,67 +1,43 @@
-CppBlog - A blog to introduce c++ program.
-===================================
 
-C++ (/ˌsiːˌplʌsˈplʌs/) is a general-purpose programming language created by Bjarne Stroustrup as an extension of the C programming language, or "C with Classes". The language has expanded significantly over time, and modern C++ now has object-oriented, generic, and functional features in addition to facilities for low-level memory manipulation. It is almost always implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Oracle, and IBM, so it is available on many platforms.[9]
+# Learn C++( updated to C++17)
 
-<table>
-  <tr>
-    <td><b>Homepage:</b></td>
-    <td><a href="https://rongplus.github.io/">Cpp Blog</a></td>
-  </tr>
-  <tr>
-    <td><b>Mailing List:</b></td>
-    <td><a href=""> </a></td>
-  </tr>
-</table>
+This repo contains samples that demonstrate
+how to use stand C++ and boost.
 
-[![Join the chat](https://badges.gitter.im/grpc/grpc.svg)](https://wechat.im/g =badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Some samples are for Windows, the others are fir Linux. Some can run both of Windows and Linux.
 
-# To start using Cpp Blog
+**Note**. You can use Microsoft Visual Studio to search the entire set of source code here to see whether the usage of a particular Windows API is being demonstrated. Clone this repo (or download the ZIP) to your local file system. Then **Find in Files** in Visual Studio, set **Look in** to the folder you cloned or downloaded into, and search for an API name. You can install [Visual Studio](https://visualstudio.microsoft.com/downloads/) without expense. A Community edition is available&mdash;it's free for students, open-source contributors, and individuals.
 
+These samples demonstrate the functionality and programming model
+for Windows and Linux.
+For boost samples, you need to download and compile boost first.
+needed to compile and run the sample.
+For more info about the programming models, platforms, languages,
+and APIs demonstrated in these samples,
+check out the documentation on the
+[Windows Dev Center](http://go.microsoft.com/fwlink/?LinkID=532421).
+[boost](https://www.boost.org)
+[STL](https://www.cplusplus.com/reference/stl/)
+[C++11](https://en.cppreference.com/w/cpp/11)
+[C++14](https://en.cppreference.com/w/cpp/14)
+[C++17](https://en.cppreference.com/w/cpp/17)
 
+To get a copy of Visual Studio, go to
+[Visual Studio Downloads](http://go.microsoft.com/fwlink/p/?linkid=301697).
 
- * [C++](cpp): follow the instructions under the `cpp` directory
- * [gtest](googletest): 
- * [boost](boost): 
- * [stl](stl): 
- * [Linux](linux): ``
- * [Windows](windows):
- * [Qt](qt): ``
- * [openCV](src/objective-c): 
- * [openGL](src/php): 
- * [Python](src/python): 
+Other samples:
 
+- [Windows Universal Samples (UWP)](https://github.com/Microsoft/Windows-universal-samples)
+- [Desktop Bridge to Universal Windows Platform (UWP)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+- [Code samples browser](https://docs.microsoft.com/samples/)
 
-Per-language quickstart guides and tutorials can be found in the [documentation section  ](https://google.ca/). Code examples are available in the [examples](examples) directory.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)
+or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-# To start developing
-
-Contributions are welcome!
-
-Please read [How to contribute](CONTRIBUTING.md) which will guide you through the entire workflow of how to build the source code, how to run the tests, 
-The "How to contribute" document also contains info on how the contribution process works and contains best practices for creating contributions.
-
-# Troubleshooting
-
-Sometimes things go wrong. Please check out the [Troubleshooting guide](TROUBLESHOOTING.md) if you are experiencing issues .
-
-# Performance 
-
-See the [Performance dashboard](https://performancard=5652536396611584) for performance numbers of master branch daily builds.
-
-# Concepts
-
-# About This Repository
+-----
+Readme for kafka
+build kafka g++ -std=c++14 consumer2.cpp  -lrdkafka++
 
 
-
-| Language                | Source                              |
-|-------------------------|-------------------------------------|
-| Shared C [core library] | [src/core](src/core)                |
-| C++                     | [src/cpp](src/cpp)                  |
-| Ruby                    | [src/ruby](src/ruby)                |
-| Python                  | [src/python](src/python)            |
-| PHP                     | [src/php](src/php)                  |
-| C# (core library based) | [src/csharp](src/csharp)            |
-| Objective-C             | [src/objective-c](src/objective-c)  |
 
