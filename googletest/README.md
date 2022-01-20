@@ -11,6 +11,8 @@ Using Google Test Framework in daily work.
 * [Another_makefile](makefile_1) another Linux makefile
 =========================================
 
+FRIEND_TEST
+
 Unit Test Output:
 ```
 ./a.out 
