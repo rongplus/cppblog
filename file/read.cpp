@@ -8,6 +8,7 @@ using namespace std;
 const string g_file_path2 = R"(c:\data\)";
 const string g_file_path1 = R"(C:\Users\metar\Downloads\)";
 const string g_file_path = g_file_path2;
+const int g_total = 28;
 
 
 void test()
@@ -68,11 +69,10 @@ void deal(int n)
         ffin.close();
 }
 
-int main()
+
+int split()
 {
-   // test();
-  //  return 0;
-  const int total = 28;
+    const int total = g_total;
 //    for(int n=0; n< total; ++n)
 //     {
 //        deal(n);
@@ -116,15 +116,17 @@ int main()
         it.close();
     }
     ff.close();
-    for(int n=0; n< total; ++n)
+    return 0;
+}
+int main()
+{
+    split();
+  
+    for(int n=0; n< g_total; ++n)
     {
        deal(n);
        cout << "done file " << n << endl;
     }
-    
-
-     
-           
     
     std::cout << "done - remove short" << std::endl;
 
