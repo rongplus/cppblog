@@ -65,7 +65,8 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
-        "__functional_03": "cpp"
+        "__functional_03": "cpp",
+        "xstring": "cpp"
     },
     "cpp-check-lint.cppcheck.--std_c++=": "c++14"
 }
