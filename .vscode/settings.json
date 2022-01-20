@@ -66,7 +66,8 @@
         "type_traits": "cpp",
         "utility": "cpp",
         "__functional_03": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "fstream": "cpp"
     },
     "cpp-check-lint.cppcheck.--std_c++=": "c++14"
 }
