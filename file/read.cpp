@@ -12,6 +12,7 @@ using namespace std;
 const string g_file_path2 = R"(D:\install_file\)";
 const string g_file_path1 = R"(C:\Users\metar\Downloads\)";
 const string g_file_path = g_file_path2;
+const int g_total = 28;
 
 void test() {
   ifstream ff(g_file_path + "5000_total.txt");
@@ -64,11 +65,12 @@ void deal(int n) {
 void print_time(string msg) {
   auto start = std::chrono::system_clock::now();
   std::time_t end_time = std::chrono::system_clock::to_time_t(start);
-
   cout << msg << "--" << std::ctime(&end_time) << endl;
 }
-void split() {
-  const int total = 28;
+
+int split()
+{
+  const int total = g_total;
 
   ifstream ff(g_file_path + "5000.txt");
   if (ff.is_open() == false) {
@@ -93,16 +95,16 @@ void split() {
     if (index >= total)
       index = 0;
   }
-
-  cout << "Done read" << endl;
-
-  for (auto &it : out_list) {
-    it.close();
-  }
-  ff.close();
+ for( auto &it: out_list)
+    {
+        it.close();
+    }
+    ff.close();
+    return 0;
 }
+int main()
+{
 
-int main() {
   print_time("splite");
   split();
   const int total = 28;
