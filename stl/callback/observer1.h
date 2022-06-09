@@ -2,14 +2,18 @@
 
 #include <string>
 
-class Observer1
-{
+class Observer1 {
 public:
-    Observer1();
-    void notified(const std::string &msg);
+  Observer1(std::string str, int n);
+  ~Observer1();
+
+  Observer1(const Observer1 &ob);
+  void notified(const std::string &msg);
+
 protected:
-    std::string m_name;
+  std::string m_name;
+  int *m_pValue;
 
 private:
-    int m_value;
+  int m_value;
 };

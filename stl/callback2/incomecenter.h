@@ -10,8 +10,8 @@ typedef bool (*FuncP)(const std::string &);
 class IncomeCenter {
 public:
   IncomeCenter();
-  void addObserverCallBack(OBCallBack *cb);
-  void removeObserverCallBack(OBCallBack *cb);
+  void addObserverCallBack(OBCallBack cb);
+  void removeObserverCallBack(OBCallBack cb);
 
   void addObserverFun(FuncP cb);
   void removeObserverFun(FuncP cb);
@@ -23,7 +23,7 @@ public:
   void add(FuncP c);
 
 private:
-  std::vector<OBCallBack *> m_ltCallBack;
+  std::vector<OBCallBack> m_ltCallBack;
   std::vector<FuncP> m_ltFuncs;
   FuncP ff;
 };

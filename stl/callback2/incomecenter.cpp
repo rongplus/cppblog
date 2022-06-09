@@ -2,18 +2,16 @@
 #include <iostream>
 IncomeCenter::IncomeCenter() {}
 
-void IncomeCenter::addObserverCallBack(OBCallBack *cb) {
-  std::cout << "add one callback" << std::endl;
+void IncomeCenter::addObserverCallBack(OBCallBack cb) {
   m_ltCallBack.push_back(cb);
 }
 
-void IncomeCenter::removeObserverCallBack(OBCallBack *cb) {
+void IncomeCenter::removeObserverCallBack(OBCallBack cb) {
   auto it = std::find(m_ltCallBack.begin(), m_ltCallBack.end(), cb);
   // auto it = std::find(m_ltFuncs.begin(), m_ltFuncs.end(), nullptr);
-  if (it != m_ltCallBack.end()) {
-    m_ltCallBack.erase(it);
-    std::cout << "remove one" << std::endl;
-  }
+  //   if (it != m_ltCallBack.end())
+  //     m_ltCallBack.erase(it);
+  //   std::cout << "remove one" << std::endl;
 }
 
 void IncomeCenter::addObserverFun(FuncP cb) { m_ltFuncs.push_back(cb); }
@@ -25,18 +23,15 @@ void IncomeCenter::removeObserverFun(FuncP cb) {
 }
 
 void IncomeCenter::notifyAll() {
-  std::string msg = "say hello form center\n";
+  std::string msg = "say hello form center";
   for (auto cb : m_ltCallBack) {
-    (*cb)(msg);
-    // std::cout << "call one" << std::endl;
-    std::cout << "call one = " << m_ltCallBack.size() << std::endl;
+    cb(msg);
   }
 }
 
 void IncomeCenter::notifyAll(std::string &msg) {
   for (auto cb : m_ltCallBack) {
-    (*cb)(msg);
-    std::cout << "call one" << m_ltCallBack.size() << std::endl;
+    cb(msg);
   }
 
   for (auto cb : m_ltFuncs) {

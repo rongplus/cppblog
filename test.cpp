@@ -1,20 +1,19 @@
-#include <iostream>
 #include <cinttypes>
+#include <iostream>
+
+
+#include <bits/stdc++.h>
+
 using namespace std;
-//locale loc("chs");
-int main()
-{
+// locale loc("chs");
+int main() {
   wchar_t wStr[] = L"我使用了wcha_t类型";
-  //wcout.imbue(loc);
+  // wcout.imbue(loc);
   wcout << wStr << endl;
   int a = 10;
 
-  auto fun1 = [=](int b) {
-    cout << "a=" << a << " b= " << b << endl;
-  };
-  auto fun2 = [&](int b) {
-    cout << "a=" << a << " b= " << b << endl;
-  };
+  auto fun1 = [=](int b) { cout << "a=" << a << " b= " << b << endl; };
+  auto fun2 = [&](int b) { cout << "a=" << a << " b= " << b << endl; };
 
   a = 30;
   fun1(a);
@@ -31,10 +30,8 @@ int main()
   std::printf("uint8 %+" PRId64 "\n", UINT8_MAX);
 
   int n = 0;
-  switch (n)
-  {
-  case 1:
-  {
+  switch (n) {
+  case 1: {
   }
   /* code */
   break;

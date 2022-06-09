@@ -2,10 +2,12 @@
 
 #include <string>
 
-class Observer4 {
+class Observer1 {
 public:
-  Observer4();
-  ~Observer4();
+  Observer1();
+  ~Observer1();
+
+  Observer1(const Observer1 &ob);
   void notified(const std::string &msg);
 
 protected:

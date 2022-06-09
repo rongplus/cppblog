@@ -113,6 +113,10 @@ int main() {
     cout << "done file " << n << endl;
   }
 
+  ofstream ffin(g_file_path + "5000_result_" + to_string(10) + ".txt");
+  ffin << "ds" << endl;
+  ffin.close();
+
   std::cout << "done - remove short" << std::endl;
   print_time("Done");
 
