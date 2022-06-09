@@ -5,15 +5,15 @@
 #cl -Wall -g  -IC:\work\git_code\googletest\googletest\include //-IC:\work\git_code\googletest\googlemock\include //
 #C:\work\git_code\googletest\build\lib\release\gtest.lib //C:\work\git_code\googletest\build\lib\Release\gmock.lib t1.cpp
 CC = cl
-CFLAGS = -Wall -g -std=c++14
+CFLAGS = -Wall -g -std=c++17
 # define any directories containing header files other than /usr/include
 #
-INCLUDES = -IC:\work\git_code\googletest\googletest\include -IC:\work\git_code\googletest\googlemock\include
+INCLUDES = -ID:\3rdLib\googletest\googletest\include -ID:\3rdLib\googletest\googlemock\include
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify
 #   their path using -Lpath, something like:
-LFLAGS = C:\work\git_code\googletest\build\lib\release\gtest.lib C:\work\git_code\googletest\build\lib\Release\gmock.lib
+LFLAGS = D:\3rdLib\googletest\build\lib\Release\gtest.lib D:\3rdLib\googletest\build\lib\Release\gmock.lib
 
 # define any libraries to link into executable:
 #   if I want to link in libraries (libx.so or libx.a) I use the -llibname 

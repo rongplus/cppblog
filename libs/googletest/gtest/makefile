@@ -7,7 +7,7 @@ CC = g++
 CFLAGS = -Wall -g -std=c++14
 # define any directories containing header files other than /usr/include
 #
-INCLUDES = -I/Users/admin/work/git/googletest/googletest/include -I/Users/admin/work/git/googletest/googlemock/include 
+INCLUDES = -I/usr/src/googletest/googletest/include -I/usr/src/googletest/googlemock/include 
 
 # define library paths in addition to /usr/lib
 #   if I wanted to include libraries not in /usr/lib I'd specify

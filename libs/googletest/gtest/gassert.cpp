@@ -1,4 +1,6 @@
 #include "gassert.h"
+#include <string>
+using namespace std;
 
 int divide(int dividend, int divisor)
 {
