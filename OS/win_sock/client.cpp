@@ -16,7 +16,7 @@
 
 
 #define DEFAULT_BUFLEN 512
-#define DEFAULT_PORT "9080"
+#define DEFAULT_PORT "12345"
 
 using namespace std;
 // #ifdef _WIN32
@@ -52,7 +52,7 @@ int  main()
     hints.ai_protocol = IPPROTO_TCP;
 
     // Resolve the server address and port
-    iResult = getaddrinfo("192.168.1.104", DEFAULT_PORT, &hints, &result);
+    iResult = getaddrinfo("192.168.1.118", DEFAULT_PORT, &hints, &result);
     if ( iResult != 0 ) {
         printf("getaddrinfo failed with error: %d\n", iResult);
         WSACleanup();
