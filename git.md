@@ -41,5 +41,10 @@ git revert <head> --no-commit
 undo last one
 git reset --hard HARD^
 
+git checkout -m <branch> <filename>
+
+undo one file
+git reset --hard <file_name>
+
 //submode - test
 sub module test 10/04
