@@ -1,48 +1,44 @@
 // Client side C/C++ program to demonstrate Socket programming
-#include <stdio.h>
-#include <sys/socket.h>
 #include <arpa/inet.h>
-#include <unistd.h>
-#include <string>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string>
+#include <sys/socket.h>
+#include <unistd.h>
+
 #define PORT 12345
 
-int main(int argc, char const *argv[])
-{
-	int sock = 0, valread;
-	struct sockaddr_in serv_addr;
-	char *hello = "Hello from client";
-	char buffer[1024] = {0};
-	if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
-	{
-		printf("\n Socket creation error \n");
-		return -1;
-	}
+int main(int argc, char const *argv[]) {
+  int sock = 0, valread;
+  struct sockaddr_in serv_addr;
+  char *hello = "Hello from client";
+  char buffer[1024] = {0};
+  if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
+    printf("\n Socket creation error \n");
+    return -1;
+  }
 
-	serv_addr.sin_family = AF_INET;
-	serv_addr.sin_port = htons(PORT);
+  serv_addr.sin_family = AF_INET;
+  serv_addr.sin_port = htons(PORT);
 
-	// Convert IPv4 and IPv6 addresses from text to binary form
-	if (inet_pton(AF_INET, "192.168.1.118", &serv_addr.sin_addr) <= 0)
-	{
-		printf("\nInvalid address/ Address not supported \n");
-		return -1;
-	}
+  // Convert IPv4 and IPv6 addresses from text to binary form
+  if (inet_pton(AF_INET, "192.168.37.131", &serv_addr.sin_addr) <= 0) {
+    printf("\nInvalid address/ Address not supported \n");
+    return -1;
+  }
 
-	if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
-	{
-		printf("\nConnection Failed \n");
-		return -1;
-	}
-	int n = 0;
-	while (true)
-	{
-		std::string ss = "From clinet -- " + std::to_string(n++);
-		send(sock, ss.data(), ss.size(), 0);
-		printf("Hello message sent\n");
-		valread = read(sock, buffer, 1024);
-		printf("%s\n", buffer);
-	}
+  if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
+    printf("\nConnection Failed \n");
+    return -1;
+  }
+  int n = 0;
+  while (true) {
+    std::string ss = "From clinet -- " + std::to_string(n++);
+    send(sock, ss.data(), ss.size(), 0);
+    printf("Hello message sent\n");
+    valread = read(sock, buffer, 1024);
+    printf("%s\n", buffer);
+  }
 
-	return 0;
+  return 0;
 }
